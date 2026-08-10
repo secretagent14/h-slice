@@ -1,1 +1,58 @@
+name: Bug report
+description: Report bugs with the engine here
+labels: [bug]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: "Describe your bug here."
+    validations:
+      required: true
 
+  - type: textarea
+    id: terminal
+    attributes:
+      label: "Terminal logs (latest.log)"
+      render: bash
+    validations:
+      required: false
+
+  - type: dropdown
+    id: modding
+    attributes:
+      label: "Are you modding a build from source or with Lua?"
+      options:
+        - Lua
+        - Source
+        - No modding
+    validations:
+      required: true  
+
+  - type: input
+    id: hslice-version
+    attributes:
+      label: "In which version of H-Slice this occurs in (if it's the build from the Actions tab, then also include the commit hash of the build)"
+      placeholder: "0.2.3"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: btarget
+    attributes:
+      label: "What is your build target?"
+      options:
+        - "Windows"
+        - "Linux"
+        - "Mac"
+        - "Android"
+        - "iOS"
+    validations:
+      required: true
+
+  - type: input
+    id: buildsummary
+    attributes:
+      label: "Did you edit anything in this build? If so, mention or summarize your changes."
+      placeholder: "Yes, I edited ClientPrefs.hx and tried to add a new setting"
+    validations:
+      required: true
